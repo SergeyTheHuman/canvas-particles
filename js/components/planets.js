@@ -41,6 +41,7 @@ export function canvas() {
 		draw(x, y) {
 			this.pos.x = x || this.pos.x + this.velocity.x
 			this.pos.y = y || this.pos.y + this.velocity.y
+
 			createCircle(this.pos.x, this.pos.y, this.radius, true, this.color)
 			createCircle(this.pos.x, this.pos.y, this.radius, false, config.dotColor)
 		}
@@ -57,6 +58,22 @@ export function canvas() {
 				let delta = { x: b.pos.x - a.pos.x, y: b.pos.y - a.pos.y }
 				let dist = Math.sqrt(delta.x * delta.x + delta.y * delta.y) || 1
 				let force = ((dist - config.sphereRad) / dist) * b.mass
+
+				//
+				// let lenght = Math.sqrt(Math.pow(b.pos.x - a.pos.x, 2) + Math.pow(b.pos.y - a.pos.y, 2))
+
+				// if (lenght < 250) {
+				// 	let opacity = 1 - lenght / 250
+
+				// 	context.lineWidth = `1`
+				// 	context.strokeStyle = `rgba(150, 25, 25, ${opacity - 0.5})`
+				// 	context.beginPath()
+				// 	context.moveTo(a.pos.x, a.pos.y)
+				// 	context.lineTo(b.pos.x, b.pos.y)
+				// 	context.closePath()
+				// 	context.stroke()
+				// }
+				//
 
 				if (j == 0) {
 					let alpha = config.mouseSize / dist
@@ -90,6 +107,7 @@ export function canvas() {
 		context.clearRect(0, 0, canvasWidth, canvasHeight)
 
 		if (mouse.down) dots.push(new Dot())
+
 		updateDots()
 
 		requestAnimationFrame(loop)
@@ -101,7 +119,6 @@ export function canvas() {
 			y: canvasHeight / 2,
 			down: false,
 		}
-
 		dots.push(new Dot(config.bigDotRadius))
 	}
 
