@@ -1,0 +1,47 @@
+// Стилизация плейсхолдера. Через запятую не сработало 
+::-webkit-input-placeholder
+	color: red
+	font-weight: 600
+::-moz-placeholder
+	color: red
+	font-weight: 600
+:-moz-placeholder
+	color: red
+	font-weight: 600
+:-ms-input-placeholder
+	color: red
+	font-weight: 600
+
+// Анимация плейсхолдера (тут плавно улетает вправо и исчезает)
+.класс_инпута::-webkit-input-placeholder
+	text-indent: 0px
+	opacity: 1
+	transition: text-indent 0.3s ease
+.класс_инпута::-moz-placeholder
+	text-indent: 0px
+	opacity: 1
+	transition: text-indent 0.3s ease
+.класс_инпута:-moz-placeholder
+	text-indent: 0px
+	opacity: 1
+	transition: text-indent 0.3s ease
+.класс_инпута:-ms-input-placeholder
+	text-indent: 0px
+	opacity: 1
+	transition: text-indent 0.3s ease
+.класс_инпута:focus::-webkit-input-placeholder
+	text-indent: 300px
+	opacity: 0
+	transition: all 0.3s ease
+.класс_инпута:focus::-moz-placeholder
+	text-indent: 300px
+	opacity: 0
+	transition: all 0.3s ease
+.класс_инпута:focus:-moz-placeholder
+	text-indent: 300px
+	opacity: 0
+	transition: all 0.3s ease
+.класс_инпута:focus:-ms-input-placeholder
+	text-indent: 300px
+	opacity: 0
+	transition: all 0.3s ease

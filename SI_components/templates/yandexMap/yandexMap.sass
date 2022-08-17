@@ -1,0 +1,30 @@
+// Удалить подписи снизу карты (копирайт, условия пользования и тд)
+[class*="copyrights-pane"]
+	display: none !important
+
+// Сделать карту черно-белой
+[class*="ground-pane"]
+	filter: grayscale(1)
+
+// Выбор всех дочерних элементов баллуна
+[class*="balloon"] *
+	color: $color-white !important
+
+// Треугольник - указатель баллуна	
+[class*="balloon__tail"]
+	border-radius: 0px !important
+
+// Треугольник - указатель баллуна	
+[class*="balloon__tail"]:after
+	background-color: $color-lightblue !important
+
+// Стилизация крестика
+[class*="balloon__close-button"]
+	background: url('../files/close.svg') 0 0/contain no-repeat !important
+	width: 30px
+	height: 30px
+	opacity: 1 !important
+
+// Стилизация всех стандартных кнопок (если нужно вернуть обычный цвет текста и тд)
+[class*="-button"]
+	color: $color-black !important

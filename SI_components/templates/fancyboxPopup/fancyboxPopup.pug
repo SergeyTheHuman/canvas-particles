@@ -1,0 +1,11 @@
+// Стили
+link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css")
+
+// Пример модалки
+.popup#popup1(style="display:none;")
+	.popup__wrapper
+		h3.popup__title Заголовок
+		.popup__text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non veniam praesentium veritatis repellendus facilis exercitationem totam at quo unde quam!
+
+// Вешаем атрибуты для открытия попапа
+button(data-fancybox data-src="#popup1") Открыть попап

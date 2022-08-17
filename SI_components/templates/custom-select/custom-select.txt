@@ -1,0 +1,7 @@
+Пример использования
+1) Импортируем весь файл 
+	import 'custom-select.js'
+2) Инициализируем 
+	customSelect('select')
+3) Подключаем стили
+	@import custom-select

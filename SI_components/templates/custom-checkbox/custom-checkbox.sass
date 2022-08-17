@@ -1,0 +1,27 @@
+.checkbox
+	&__label
+		font-size: 1rem
+		display: flex
+		align-items: center
+		gap: 10px
+		cursor: pointer
+		user-select: none
+	& .checkbox__input--hidden:checked + .checkbox__input
+		background-color: #4878A6
+	&__input
+		width: 24px
+		height: 24px
+		border: 1px solid #EAEAF0
+		background-color: transparent
+		display: flex
+		justify-content: center
+		align-items: center
+	&__input--hidden
+		position: absolute
+		visibility: hidden
+		appearance: none
+		-moz-appearance: none
+		-webkit-appearance: none
+		width: 0
+		height: 0
+		font-size: 0
