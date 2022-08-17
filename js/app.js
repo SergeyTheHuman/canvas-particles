@@ -1,7 +1,3 @@
-import { isWebp } from './utils/isWebp.js'
-
-isWebp()
-
 function canvas() {
 	const canvas = document.createElement('canvas')
 	const context = canvas.getContext('2d')
@@ -13,12 +9,12 @@ function canvas() {
 
 	let particles = []
 	let config = {
-		bgColor: `rgba(30, 30, 30, 1)`,
-		particleColor: `rgba(255, 255, 40, 1)`,
-		particleRadius: 3,
-		particleQuantity: Math.round((canvasWidth + canvasHeight) / 20),
+		bgColor: `rgba(0,0,0,1)`,
+		particleColor: `rgba(45, 45, 45, 1)`,
+		particleRadius: 2,
+		particleQuantity: Math.round((canvasWidth + canvasHeight) / 15),
 		particleMaxVelocity: 0.5,
-		particleLife: 6,
+		particleLife: 15,
 		lineLenght: 150,
 		mouseCircleRadius: 100,
 	}
@@ -107,7 +103,7 @@ function canvas() {
 					opacity = 1 - lenght / config.lineLenght
 
 					context.lineWidth = `1`
-					context.strokeStyle = `rgba(255, 40, 40, ${opacity})`
+					context.strokeStyle = `rgba(25, 25, 25, ${opacity})`
 					context.beginPath()
 					context.moveTo(x1, y1)
 					context.lineTo(x2, y2)
@@ -125,7 +121,7 @@ function canvas() {
 
 	function redrawParticles() {
 		for (const particle of particles) {
-			particle.reSpawnParticle()
+			// particle.reSpawnParticle()
 			particle.updatePosition()
 			particle.reDraw()
 		}
